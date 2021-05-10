@@ -1,0 +1,17 @@
+{
+    "name": "eboss/eboss",
+    "description": "eBOSS Core",
+    "type": "library",
+    "authors": [
+        {
+            "name": "wilnguyen1998",
+            "email": "wilnguyen1998@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "eBOSS\\": "src/"
+        }
+    }
+}
