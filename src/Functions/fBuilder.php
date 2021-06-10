@@ -1,4 +1,6 @@
 <?php
+namespace eBOSS\Functions;
+
 class fBuilder
 {
     public static function BuilderAID()

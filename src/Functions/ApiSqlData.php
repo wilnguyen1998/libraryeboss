@@ -7,7 +7,7 @@ class ApiSqlData
     public $vIpApiServer;
 
     /**
-     * @param $SelectCommandView
+     * @param $SelectCommandView: Câu truy vấn
      * @return array|string|string[]
      */
     private function GetSelectCommandView($SelectCommandView)
@@ -19,7 +19,7 @@ class ApiSqlData
 
 
     /**
-     * @param $SelectCommandView: Phải qua xử lý fString:SelectCommandBuilder
+     * @param $SelectCommandView: Câu truy vấn
      * @return mixed
      */
 
@@ -37,6 +37,13 @@ class ApiSqlData
 
     }
 
+    /**
+     * @param $Table: Danh sách dữ liệu
+     * @param $CheckColumnName: Tên cột cần kiểm tra
+     * @param $CheckValue: Giá trị tương ứng cột cần kiểm tra
+     * @param $ResultColumnName: Cột cần trả về kết quả
+     * @return mixed|string
+     */
     public function GetValue($Table, $CheckColumnName, $CheckValue, $ResultColumnName)
     {
         $Result = "";
@@ -47,6 +54,13 @@ class ApiSqlData
         return $Result;
     }
 
+    /**
+     * @param $Table: Danh sách dữ liệu dạng Table
+     * @param $CheckColumnNames: Mảng cột cần kiểm tra
+     * @param $CheckValues: Mảng dữ liệu cần kiểm tra
+     * @param $ResultColumnName: Tên cột cần trả về kết quả
+     * @return mixed|string
+     */
     public function GetValues($Table, $CheckColumnNames, $CheckValues, $ResultColumnName)
     {
         $Result = "";

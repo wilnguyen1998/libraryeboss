@@ -4,6 +4,14 @@ namespace eBOSS\Functions;
 
 class fString
 {
+    /**
+     * @param $Language: Ngôn ngữ sẽ hiển thị (Ex: NameVietnamese)
+     * @param $NameChinese: Ngôn ngữ tiếng Trung (NameChinese)
+     * @param $NameVietnamese: Ngôn ngữ tiếng Việt (NameVietnamese)
+     * @param $NameEnglish: Ngôn ngữ tiếng Anh (NameEnglish)
+     * @param $NameOther: Ngôn ngữ khác (NameOther)
+     * @return mixed
+     */
     public static function SwitchLanguage($Language, $NameChinese, $NameVietnamese, $NameEnglish, $NameOther)
     {
         switch ($Language) {
@@ -18,14 +26,21 @@ class fString
         }
     }
 
-    public static function SelectCommandBuilder($SelectCommand, $Language, $ParameterValue)
+
+    /**
+     * @param $SelectCommand: Câu truy vấn có biến cần thay đổi
+     * @param $Parameter: Tên biến cần thay đổi
+     * @param $ParameterValue: Gía trị biến
+     * @return array|string|string[]
+     */
+    public static function SelectCommandBuilder($SelectCommand, $Parameter, $ParameterValue)
     {
-        return str_replace($Language, $ParameterValue, $SelectCommand);
+        return str_replace($Parameter, $ParameterValue, $SelectCommand);
     }
 
 
     /**
-     * @param $BarcodeValue : Giá trị Barcode khi Scan vào hệ thống
+     * @param $BarcodeValue : Chuỗi cần phân tích
      * @return string
      */
     public function BuildBarcode($BarcodeValue): string
@@ -38,7 +53,10 @@ class fString
         return implode(' ', $ArrayCompare);
     }
 
-
+    /**
+     * @param $BarcodeValue: Chuỗi cần tách thành mảng
+     * @return array
+     */
     public function ArrayBarcode($BarcodeValue): array
     {
         return explode(' ', $this->BuildBarcode($BarcodeValue));

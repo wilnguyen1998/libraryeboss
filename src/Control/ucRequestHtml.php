@@ -6,6 +6,10 @@ namespace eBOSS\Control;
 class ucRequestHtml
 {
 
+    /**
+     * @param $ElementByID: Tên của biến cần xem hiệu ứng
+     * @return string|null
+     */
     public function RequestHtml($ElementByID)
     {
         $Result = null;
